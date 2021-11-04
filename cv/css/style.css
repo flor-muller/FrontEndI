@@ -1,0 +1,51 @@
+body {
+    font-family: 'Inconsolata', monospace;
+}
+
+header {
+    height: auto;
+    margin: 0px; /*Investigar por qué no sobreescribe el margin 8px del body*/
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    background-color: #F4e8dd;
+    font-size: 35px;
+    line-height: 3;
+    letter-spacing: 10px;
+}
+
+h2 {
+    background-color: #e5e5e5;
+    line-height: 2;
+    font-size: 20px;
+}
+
+#imagen-header {
+    margin: 0px; /*Investigar por qué no sobreescribe el margin 8px del body*/
+    width: 100%;
+}
+
+.interlineado-cuerpo {
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.interlineado-cuerpo span {
+    font-weight: bold;
+}
+footer {
+    background-color: #c4c4c4;
+    color: whitesmoke;
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 3;
+    text-align: center;
+}
+
+footer img {
+    height: 20px;
+    width: 20px;
+}

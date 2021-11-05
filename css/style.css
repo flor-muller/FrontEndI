@@ -1,0 +1,23 @@
+body {
+    font-family: 'Inconsolata', monospace;
+}
+
+h1 {
+    background-color: #F4e8dd;
+    font-size: 35px;
+    line-height: 3;
+    letter-spacing: 10px;
+    text-align: center;
+}
+
+h2 {
+    background-color: #e5e5e5;
+    line-height: 2;
+    font-size: 20px;
+    padding-left: 8px;
+}
+
+ul a {
+    text-decoration: none;
+    line-height: 2;
+}

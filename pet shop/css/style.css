@@ -1,0 +1,21 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#seccion1-header {
+    color: #f3f3f3;
+    background-color: #222;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+#seccion2-header {
+    color: #fff;
+    background-color: #F0A83e;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+section.banner {
+    text-align: center;
+}

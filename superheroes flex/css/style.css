@@ -13,7 +13,7 @@ body {
 div.descuento {
     background-color: #1CD1B0;
     padding: 10px;
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 17.58px;
 }
 
@@ -45,18 +45,14 @@ section {
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 /*Flexbox Items*/
-article.contenedor-uno {
+article.contenedor-uno, article.contenedor-dos, article.contenedor-tres, article.contenedor-cuatro {
     position: relative; /*Hay que posicionarlos relative pero sin desplazarlos, para que las imágenes absolute (hijas) tengan como punto de referencia a estos contenedores y no al body*/
 }
-article.contenedor-dos {
-    position: relative;
-}
-article.contenedor-tres {
-    position: relative;
-}
+/*Ya no sería necesario contar con clase para cada article, pero fueron definidos en el tp de position*/
 
 /*Código CSS con position que hay que modificar para usar Flex 
 
@@ -67,8 +63,6 @@ article.contenedor-uno {
     position: absolute;
     top: 293px;
 }
-
-
 article.contenedor-dos {
     display: inline-block;
     margin-left: 15px;
@@ -77,8 +71,6 @@ article.contenedor-dos {
     top: 293px;
     left: 347px;
 }
-
-
 article.contenedor-tres {
     display: inline-block;
     margin-left: 15px;
@@ -148,7 +140,7 @@ article.contenedor-tres {
     padding: 10px 18px 37px;
 }
 
-.boton {
+.boton-ver-mas {
     background-color: #00669F;
     border: none;
     color: #FFF9F9;
@@ -165,10 +157,55 @@ article.contenedor-tres {
 footer {
     background-color: #00669F;
     color: #FFF9F9;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 18.75px;
-    padding: 16px;
+    padding: 1rem;
     bottom: 0px;
     width: 100%;
+    text-align: center;
+}
+
+/* Botón Fixed */
+div.boton-fijo {
+    background-color: #00669F;
+    text-align: center;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    top: 50vh;
+    right: 2rem;
+    padding: 0.3rem;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+div.boton-fijo p {
+    font-size: 2rem;
+}
+div.boton-fijo p a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/*----- RESPONSIVE -----*/
+/* Ancho a partir del cual baja una tarjeta (ancho 4cards + gap) */
+@media (max-width: 1320px) {
+    main {
+        min-height: 1393px; /*Aumento altura para que entren 2 cards wrap, sus gap y un margen hasta el footer*/
+    }
+}
+/* Celular */
+@media (max-width: 460px) {
+    main {
+        min-height: 2500px; /*Aumento altura para que entren 3 cards wrap, sus gap y un margen hasta el footer*/
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-left: 0px;
+    }
 }

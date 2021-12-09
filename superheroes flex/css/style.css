@@ -36,14 +36,15 @@ main {
     min-height: 834px;
 }
 
+/*------INDEX------*/
 /*Flexbox Container*/
-section {
+section.cards {
     margin-left: 32px; /*Hay que sumar el margin 15 px porque elegí flex-start para main axis*/
     margin-top: 154px; /*Es desde el header porque ya no es absolute (sin flex era desde el body)*/
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-content: center;
     gap: 30px;
     flex-wrap: wrap;
 }
@@ -187,6 +188,33 @@ div.boton-fijo p a {
     color: #FFFFFF;
 }
 
+/*------AÑADIR------*/
+section.campos-formulario {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+article.form-item-1, article.form-item-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+hr {
+    border: 1px solid #CCCCCC;
+}
+
+div.boton-fijo:hover, .boton-ver-mas:hover, input[type=submit]:hover {
+    background: #001D2D;
+    color: #FFFFFF;
+}
+
 /*----- RESPONSIVE -----*/
 /* Ancho a partir del cual baja una tarjeta (ancho 4cards + gap) */
 @media (max-width: 1320px) {
@@ -199,11 +227,11 @@ div.boton-fijo p a {
     main {
         min-height: 2500px; /*Aumento altura para que entren 3 cards wrap, sus gap y un margen hasta el footer*/
     }
-    section {
+    section.cards {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-content: center;
         gap: 30px;
         flex-wrap: wrap;
         margin-left: 0px;

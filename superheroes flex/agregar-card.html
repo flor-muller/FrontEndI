@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhéroes</title>
+    <script src="https://kit.fontawesome.com/f0eab0bc3f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="descuento">
+        <p>Descuentos 20%</p>
+    </div>
+    <header>
+        <h1>Superhéroes</h1>
+    </header>
+    <main>
+        <div class="formulario">
+            <h2>Añadí tu Superhéroe!</h2>
+            <p>Agregá tu personaje favorito completando las opciones.</p>
+            <form action="index.html" method="get">
+                <section class="campos-formulario">
+                    <article class="form-item-1">
+                        <label for="nombre">*Nombre</label>
+                        <input id="nombre" type="text" name="nombre" required placeholder="Ejemplo: BATMAN">
+    
+                        <label for="fecha">Fecha</label>
+                        <input id="fecha" type="date" name="fecha">
+    
+                        <label for="descripcion">Descripción</label>
+                        <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción breve del Superhéroe"></textarea>
+                    </article>
+                    <article class="form-item-2">
+                        <label for="especie">*Especie</label>
+                        <select name="especie" id="especie">
+                            <option selected disabled>Especie</option>
+                            <option value="humano">Humano</option>
+                            <option value="extraterrestre">Extraterrestre</option>
+                            <option value="laboratorio">De Laboratorio</option>
+                        </select>
+                        
+                        <label for="foto">Agregar Foto</label>
+                        <input id="foto" type="file" name="avatar" accept=".jpg, .png, .jpeg" placeholder="Seleccionar archivo">
+
+                        <p>Poderes
+                            <input type="checkbox" id="poder1" name="poderes" value="1">
+                            <label for="poder1">Volar</label>
+                            <input type="checkbox" id="poder2" name="poderes" value="2">
+                            <label for="poder2">Superinteligencia</label>
+                            <input type="checkbox" id="poder3" name="poderes" value="3">
+                            <label for="poder3">Vista de rayo láser</label>
+                            <input type="checkbox" id="poder4" name="poderes" value="4">
+                            <label for="poder4">Billetera gorda</label>
+                        </p>
+                        
+                        <hr>
+                        
+                        <p>Tipo de Personaje
+                            <input type="radio" name="tipo-personaje" id="tipo1" value="1">
+                            <label for="tipo1">Héroe / Heroína</label>
+                            <input type="radio" name="tipo-personaje" id="tipo2" value="2">
+                            <label for="tipo2">Villano / Villana</label>
+                        </p>
+
+                    </article>
+                </section>
+                <section class="enviar-formulario">
+                    <input type="submit" value="Añadir">
+                </section>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Todos los derechos reservados a FRONT END 1</p>
+    </footer>
+</body>
+</html>

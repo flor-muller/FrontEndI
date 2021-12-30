@@ -18,7 +18,7 @@
     <header>
         <h1>Superhéroes</h1>
     </header>
-    <main>
+    <main class="principal-agregar">
         <div class="formulario">
             <h2>Añadí tu Superhéroe!</h2>
             <p>Agregá tu personaje favorito completando las opciones.</p>
@@ -37,7 +37,7 @@
                     <article class="form-item-2">
                         <label for="especie">*Especie</label>
                         <select name="especie" id="especie">
-                            <option selected disabled>Especie</option>
+                            <option selected disabled>Seleccionar</option>
                             <option value="humano">Humano</option>
                             <option value="extraterrestre">Extraterrestre</option>
                             <option value="laboratorio">De Laboratorio</option>
@@ -46,24 +46,38 @@
                         <label for="foto">Agregar Foto</label>
                         <input id="foto" type="file" name="avatar" accept=".jpg, .png, .jpeg" placeholder="Seleccionar archivo">
 
-                        <p>Poderes
-                            <input type="checkbox" id="poder1" name="poderes" value="1">
-                            <label for="poder1">Volar</label>
-                            <input type="checkbox" id="poder2" name="poderes" value="2">
-                            <label for="poder2">Superinteligencia</label>
-                            <input type="checkbox" id="poder3" name="poderes" value="3">
-                            <label for="poder3">Vista de rayo láser</label>
-                            <input type="checkbox" id="poder4" name="poderes" value="4">
-                            <label for="poder4">Billetera gorda</label>
+                        <!-- Input dentro de label para que en el flex queden en misma línea-->
+                        <p class="opcion-multiple">Poderes
+                            <label for="poder1">
+                                <input type="checkbox" id="poder1" name="poderes" value="1">
+                                Volar
+                            </label>
+                            <label for="poder2">
+                                <input type="checkbox" id="poder2" name="poderes" value="2">
+                                Superinteligencia
+                            </label>
+                            <label for="poder3">
+                                <input type="checkbox" id="poder3" name="poderes" value="3">
+                                Vista de rayo láser
+                            </label>
+                            <label for="poder4">
+                                <input type="checkbox" id="poder4" name="poderes" value="4">
+                                Billetera gorda
+                            </label>
                         </p>
                         
                         <hr>
                         
-                        <p>Tipo de Personaje
-                            <input type="radio" name="tipo-personaje" id="tipo1" value="1">
-                            <label for="tipo1">Héroe / Heroína</label>
-                            <input type="radio" name="tipo-personaje" id="tipo2" value="2">
-                            <label for="tipo2">Villano / Villana</label>
+                        <!-- Input dentro de label para que en el flex queden en misma línea-->
+                        <p class="opcion-multiple">Tipo de Personaje
+                            <label for="tipo1">
+                                <input type="radio" name="tipo-personaje" id="tipo1" value="1">
+                                Héroe / Heroína
+                            </label>
+                            <label for="tipo2">
+                                <input type="radio" name="tipo-personaje" id="tipo2" value="2">
+                                Villano / Villana
+                            </label>
                         </p>
 
                     </article>

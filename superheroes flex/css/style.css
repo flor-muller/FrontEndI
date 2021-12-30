@@ -189,28 +189,94 @@ div.boton-fijo p a {
 }
 
 /*------AÑADIR------*/
+main.principal-agregar {
+    min-height: 880px;
+}
+
+div.formulario {
+    margin-top: 40px;
+    margin-left: calc((100vw - 954px)/2); /*para centrarlo*/
+    width: 954px;
+    height: 834px; /*revisar*/
+    text-align: center;
+    background-color: #00669F;
+    border-radius: 49px;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
+    color: #FBFFFD;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+/* Flex Principal */ 
 section.campos-formulario {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    gap: 10px;
+    gap: 30px;
     flex-wrap: wrap;
+    text-align: left;
+    margin-top: 20px;
 }
 
+/* Flex Secundario*/ 
 article.form-item-1, article.form-item-2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    gap: 10px;
+    gap: 20px;
+    width: 343px;
+    height: 520px; /*revisar*/
+}
+
+/* Flex Opciones mltiples*/ 
+p.opcion-multiple {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+div.formulario h2, input[type=submit] {
+    font-size: 40px;
+    line-height: 72px;
+    font-weight: 700;
+}
+
+div.formulario h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+input[type=date], input[type=text ], input[type=submit], textarea, select {
+    border-radius: 15.3px;
+    border: 1.53px solid rgba(0, 0, 0, 0.1);
+    padding: 15px 10px;
+}
+
+p.opcion-multiple label {
+    font-size: 16px;
 }
 
 hr {
-    border: 1px solid #CCCCCC;
+    border: 0.5px solid #CCCCCC;
 }
 
-div.boton-fijo:hover, .boton-ver-mas:hover, input[type=submit]:hover {
+input[type=submit] {
+    line-height: 44px;
+    color: #000000;
+    background-color: #1CD1B0;
+    width: 466px;
+    height: 87px;
+    margin-top: 40px;
+}
+
+/*------HOVER------*/
+div.boton-fijo, .boton-ver-mas, input[type=submit] {
+    transition: all 0.5s;
+}
+
+    div.boton-fijo:hover, .boton-ver-mas:hover, input[type=submit]:hover {
     background: #001D2D;
     color: #FFFFFF;
 }

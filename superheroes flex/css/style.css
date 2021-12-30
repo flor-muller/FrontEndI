@@ -188,7 +188,7 @@ div.boton-fijo p a {
     color: #FFFFFF;
 }
 
-/*------AÑADIR------*/
+/*------PÁGINA AÑADIR------*/
 main.principal-agregar {
     min-height: 880px;
 }
@@ -223,7 +223,7 @@ section.campos-formulario {
 article.form-item-1, article.form-item-2 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
     gap: 20px;
     width: 343px;
@@ -266,9 +266,9 @@ input[type=submit] {
     line-height: 44px;
     color: #000000;
     background-color: #1CD1B0;
-    width: 466px;
+    width: 343px;
     height: 87px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 /*------HOVER------*/
@@ -282,14 +282,31 @@ div.boton-fijo, .boton-ver-mas, input[type=submit] {
 }
 
 /*----- RESPONSIVE -----*/
-/* Ancho a partir del cual baja una tarjeta (ancho 4cards + gap) */
+/* INDEX: Ancho a partir del cual baja una tarjeta (ancho 4cards + gap) */
 @media (max-width: 1320px) {
     main {
         min-height: 1393px; /*Aumento altura para que entren 2 cards wrap, sus gap y un margen hasta el footer*/
     }
 }
+
+/* AÑADIR: Ancho a partir del cual no entra formulario y requiere bajar (ancho div) */
+@media (max-width: 954px) {
+    main.principal-agregar {
+        min-height: 1430px; /*Aumento altura para que entre formulario en columna (+520px +30px)*/
+    }
+    div.formulario {
+        margin-left: calc((100vw - 611px)/2); /*para centrarlo con nuevo ancho*/
+        width: 611px; /*Resto ancho de ítem flex formulario (-343px)*/
+        height: 1384px; /*Agrego alto de ítem flex formulario (+520px) y gap (+30px)*/
+    }
+    section.campos-formulario {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
 /* Celular */
 @media (max-width: 460px) {
+    /* INDEX */
     main {
         min-height: 2500px; /*Aumento altura para que entren 3 cards wrap, sus gap y un margen hasta el footer*/
     }
@@ -302,4 +319,10 @@ div.boton-fijo, .boton-ver-mas, input[type=submit] {
         flex-wrap: wrap;
         margin-left: 0px;
     }
+    /* AÑADIR */
+    div.formulario {
+        margin-left: calc((100vw - 430px)/2); /*para centrarlo con nuevo ancho*/
+        width: 430px; /*Resto ancho de ítem flex formulario (-343px)*/
+    }
+    
 }

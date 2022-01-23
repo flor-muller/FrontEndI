@@ -1,0 +1,486 @@
+*, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1rem;
+    counter-reset: cuenta-lista; /*Inicia contador*/
+}
+
+/* Encabezado */
+header {
+    width: 100%;
+    height: 100px;
+    padding-left: 11.45vw; /*Relativo al viewport para que ajuste automático al aumentar ancho */
+    padding-right: 11.45vw;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+/* Navegación desktop oculta */
+header nav.desktop-navigation, header button {
+    display: none;
+}
+
+main {
+    margin-top: 100px; /*Alto del header*/
+}
+
+main section {
+    margin-top: 5rem; /*--aumentarlo en desktop*/
+}
+
+/* Flex Secciones principales y Footer principal */
+section.home, section.about-us, div.flex-testimony, section.simplify, div.footer-principal-flex {
+    display: flex;
+    flex-direction: row; /*row + wrap para cuando se agrende la pantalla. Para mobile al tener el ancho de la screen, se ve como column */
+    justify-content: center; /* --space-between en desktop */
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 2rem; /*--aumentarlo en desktop*/
+}
+
+.item-flex, .item-flex-2 {
+    width: 375px;/*--aumentarlo en desktop*/
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center; /*--left en desktop, no todos*/
+}
+
+/* Propiedades generales */
+h1, h2, h3, dt {
+    color: rgb(35, 44, 81);
+    font-weight: 700;
+}
+
+p, dd {
+    color: rgb(143, 148, 167);
+    font-weight: 500;
+    line-height: 1.625rem;
+}
+
+/* Sección HOME */
+div.illustration-intro {
+    width: 343px; /*--Mobile: 375px - 2rem. En desktop 540px*/
+    height: 310px; /*--Mantener proporción de imagen original (345/540*485). En desktop 485px*/
+    background-image: url('../img/illustration-intro.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 2.95rem; /* -- 3.625rem en desktop */
+    line-height: 3.1rem; /* -- 4.125rem en desktop */
+    letter-spacing: -0.25rem; 
+}
+
+section.home p, section.about-us p {
+    padding: 1.75rem 0.5rem; /* --En desktop aumentar padding-right y eliminar padding-left */
+}
+
+/*Botón Get-Started*/
+.button-get-started {
+    background-color: rgb(242, 95, 58);
+    color: #FFFFFF;
+    border: none;
+    font-weight: 700;
+    font-size: 0.824rem;
+    line-height: 1.204px;
+    text-align: center;
+    width: 134px;
+    height: 44px;
+    padding: 12.5px 30.5px;
+    box-shadow: 0px 4px 8px rgba(242, 97, 59, 0.5);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.button-get-started:hover {
+    background-color: rgba(242, 95, 58, 0.6);
+}
+
+/* Sección ABOUT US */
+section.about-us h2 {
+    font-size: 2.25rem;
+    line-height: 2.56rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Numeración Lista */
+section.about-us dt::before {
+    display: inline-block; /*Para darle propiedades de caja. Por defecto es inline*/
+    content: counter(cuenta-lista, decimal-leading-zero); /*Contador con 0 delante*/
+    counter-increment: cuenta-lista;
+    height: 43px;
+    width: 69px;
+    background-color: rgb(242, 95, 58);
+    border-radius: 50px;
+    margin-right: 10px; /* Menor a Figma (23px) para que entre en mobile */
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 10px;
+    position: relative; /*Para que conserve lugar de caja*/
+    top: 0px;
+}
+
+section.about-us dt {
+    height: 43px;
+    padding-top: -13.5px;
+    text-align: left; /*--En desktop agregar margin-left. */
+    letter-spacing: -0.02rem;
+    background-color: rgb(255, 239, 234); /*--En desktop poner blanco */
+    border-radius: 50px 0px 0px 50px;
+}
+
+section.about-us dd {
+padding-top: 0.8rem;
+margin-bottom: 2.09rem;
+letter-spacing: -0.02rem;
+text-align: left;
+}
+
+/* Sección TESTIMONY */
+section.testimony h2 {
+    font-size: 2.45rem;
+    line-height: 3.81rem;
+    letter-spacing: -0.2rem;
+    text-align: center;
+    margin-bottom: 74px;
+}
+
+div.avatar-background {
+    position: relative; /*Necesario para imagen position: absolute*/
+    height: 35px;
+}
+
+img.avatar {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: -35px; /*50% alto foto*/
+    left: calc(50% - 35px); /*50% ancho contenedor - 50% ancho foto*/
+}
+
+div.testimony-container {
+    height: 230px; /* --En desktop height 219px y aumentar width a 445px */
+    background-color: rgb(249, 249, 249);
+}
+
+div.testimony-container h3 {
+    line-height: 1.39rem;
+    letter-spacing: -0.01rem;
+    padding-top: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+div.testimony-container p {
+padding-left: 1rem;
+padding-right: 1rem;
+line-height: 1.566rem;
+}
+
+section.testimony div:nth-child(3) {
+    text-align: center;
+    margin-top: 2.8125rem;
+    margin-bottom: 2.8125rem; /*--En desktop 11.25rem*/
+}
+
+/* Sección SIMPLIFY */
+section.simplify {
+    background-color:  rgb(242, 95, 58);
+    background-image: url('../img/bg-simplify-section-mobile.svg'); /*--desktop cambiar imagen*/
+    background-repeat: no-repeat;
+    background-size: contain; /*--desktop cover */
+    height: 380px;/*--desktop 224px*/
+}
+
+section.simplify p {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: -0.005rem;
+}
+
+section.simplify .button-get-started {
+    background-color: #FFFFFF;
+    color: rgb(242, 95, 58);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    transition: color 0.5s ease;
+}
+
+section.simplify .button-get-started:hover {
+    color: rgba(242, 95, 58, 0.6);
+}
+
+/*FOOTER*/
+footer {
+    background-color: rgb(29, 30, 37);
+    padding: 3.5rem 1rem;
+}
+
+/* Form Newsletter */
+form input {
+    border-radius: 50px;
+    border: none;
+}
+
+input[type=email] {
+    font-weight: 500;
+    width: 201px;
+    height: 42px;
+    padding-left: 1rem;
+    transition: all 0.2s ease;
+}
+
+input[type=submit] {
+    font-weight: 700;
+    color: #FFFFFF;
+    width: 63px;
+    height: 42px;
+    background-color: rgb(242, 95, 58);
+    margin-left: 0.5rem;
+    transition: background-color 0.5s ease;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(245, 134, 106);
+}
+
+input[type=email]:focus {
+    outline: solid 2px #007bff;;
+}
+
+input[type=email]:invalid {
+    outline: solid 2px rgb(242, 95, 58);
+}
+
+/* Flex Lista Enlaces Footer */
+div.footer-list-flex {
+    width: 70vw; /*--desktop 27vw*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+div.footer-list-flex li a {
+    display:inline-block;
+    text-align: left;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 400;
+    line-height: 1.44rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    transition: all 0.5s ease;
+}
+
+div.footer-list-flex li a:hover {
+    color:rgb(242, 95, 58);
+}
+
+/* Flex Redes Sociales y Logo Footer */
+div.footer-social-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4.17rem;
+}
+
+/* Flex Redes Sociales */
+div.social-media {
+    width: 100vw; /*--desktop 12vw*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+div.social-media i {
+    color:#FFFFFF;
+    font-size: 30px; /*--desktop 20 px */
+    transition: color 0.5s ease;
+}
+
+div.social-media i:hover {
+    color:rgb(242, 95, 58);
+}
+
+.footer-logo {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Copyright */
+footer div p {
+    text-align: center; /*-- desktop right */
+    font-size: 0.78rem;
+    line-height: 1.125px;
+}
+
+/*----RESPONSIVE----*/
+@media screen and (min-width: 376px) {
+    /* Encabezado */ 
+    /* Navegación mobile oculta */
+    nav.mobile-navigation {
+        display: none;
+    }
+
+    /*  Navegación + Logo */
+    header nav.desktop-navigation, header button {
+        display: block;
+    }
+    /* Encabezado: Flex Navegación */
+    nav.desktop-navigation ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.75rem;
+        flex: wrap;
+    }
+
+    nav.desktop-navigation li a {
+        text-align: left;
+        text-decoration: none;
+        color: rgb(35, 44, 81);
+        font-weight: 500;
+        font-size: 0.81rem;
+        line-height: 1.44rem;
+        transition: all 0.5s ease;
+    }
+    
+    nav.desktop-navigation li a:visited {
+        color:rgb(14, 116, 94);
+    }
+
+    nav.desktop-navigation li a:hover {
+        color:rgb(143, 148, 167);
+    }
+
+    nav.desktop-navigation li a:active {
+        color:rgb(242, 95, 58);
+    }
+
+    /* Main */
+    main section {
+        margin-top: 8rem;
+    }
+
+    /* Flex Secciones principales y Footer principal */
+    section.home, section.about-us, section.simplify, div.footer-principal-flex {
+        justify-content: space-between;
+        padding-left: 11.45vw; 
+        padding-right: 11.45vw;
+    }
+    
+    .item-flex, .item-flex-2 {
+        width: 439px;
+        text-align: left;
+        padding: 0;
+    }
+
+    section.testimony article {
+        text-align: center;
+    }
+
+    section.simplify div.item-flex-2 {
+        text-align: right;
+    }
+
+    /* Sección HOME */
+    div.illustration-intro {
+        width: 540px;
+        height: 485px;
+        order: 1;
+    }
+
+    h1 {
+        font-size: 3.625rem;
+        line-height: 4.125rem; 
+    }
+
+    section.home p, section.about-us p {
+        padding-right: 5rem;
+        padding-left: 0;
+    }
+
+    /* Sección ABOUT US */
+    /* Numeración Lista */
+    section.about-us dt::before {
+        margin-right: 23px; /* Separación boton a texto de Figma */
+    }
+
+    section.about-us dt {
+        margin-left: -92px; /* El ::before es con el número, no la caja. Se necesita desplazar 92 px (ancho botón(69px)+separación boton-texto(23px)+ padding interno hasta número(10px)) */
+        background-color: #FFFFFF;
+    }
+
+    /* Sección TESTIMONY */
+    div.testimony-container {
+        height: 219px;
+        width: 445px;
+    }
+
+    section.testimony div:nth-child(3) {
+        margin-bottom: 11.25rem;
+    }
+
+    /* Sección SIMPLIFY */
+    section.simplify {
+        background-image: url('../img/bg-simplify-section-desktop.svg');
+        height: 224px;
+        background-position: right;
+        background-size: cover;
+    }
+
+    section.simplify p {
+        font-size: 2.3rem;
+    }
+
+    /*FOOTER*/
+    /* Flex Principal (cambio de orden) */
+    div.footer-principal-flex form {
+        order: 1;
+    }
+    div.footer-social-flex {
+        order: -1;
+    }
+
+    /* Flex Lista Enlaces Footer */
+    div.footer-list-flex {
+        width: 27vw;
+    }
+
+    /* Flex Redes Sociales */
+    div.social-media {
+        width: 12vw;
+        order: 1;
+    }
+
+    /* Íconos redes sociales */
+    div.social-media i {
+        font-size: 20px;
+    }
+
+    /* Copyright */
+    footer div p {
+        text-align: right;
+        padding-right: 11.45vw;
+    }
+
+}
